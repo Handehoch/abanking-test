@@ -1,7 +1,8 @@
 <div class="companies">
   <ul class="companies__list" *ngIf="companies$ !== undefined">
     <li class="companies__card" *ngFor="let company of companies$ | async">
-        <app-company-card [company]="company"></app-company-card>
+        <app-company-card [company]="company" [routerLink]="['/companies', company.id]">
+        </app-company-card>
     </li>
   </ul>
 </div>
