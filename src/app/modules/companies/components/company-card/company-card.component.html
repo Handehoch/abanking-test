@@ -1,1 +1,8 @@
-<p>company-card works!</p>
+<div class="company-card">
+  <img [src]="company.logo" alt="Company logo" class="company-card__logo">
+  <div class="company-card__info">
+    <h2 class="company-card__name">{{company.business_name}}</h2>
+    <p class="company-card__description">{{company.industry}}</p>
+    <p class="company-card__description">{{company.type}}</p>
+  </div>
+</div>

@@ -11,7 +11,7 @@ import { ICompany } from '../../models/company.interface';
 })
 export class CompaniesComponent implements OnInit {
   companies$: Observable<ICompany[]> | undefined;
-  public pageSize: number = 16;
+  public pageSize: number = 8;
   constructor(private readonly companiesService: CompaniesService) {}
 
   getCompanies(): void {
