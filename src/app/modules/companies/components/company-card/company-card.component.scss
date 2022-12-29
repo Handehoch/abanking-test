@@ -5,6 +5,9 @@
   cursor: pointer;
   padding-top: 40px;
 
+  box-shadow: none;
+  transition: box-shadow 0.3s linear;
+
   &__logo {
     width: 80%;
     margin: 0 auto 40px;
@@ -26,4 +29,9 @@
     font-weight: 400;
     line-height: 150%;
   }
+}
+
+.company-card:hover {
+  box-shadow: 0 0 20px black;
+  transition: box-shadow 0.3s linear;
 }
