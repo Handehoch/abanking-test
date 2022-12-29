@@ -1,1 +1,7 @@
-<p>companies works!</p>
+<div class="companies">
+  <ul class="companies__list" *ngIf="companies$ !== undefined">
+    <li class="companies_card" *ngFor="let company of companies$ | async">
+        <!--TODO player card-->
+    </li>
+  </ul>
+</div>
