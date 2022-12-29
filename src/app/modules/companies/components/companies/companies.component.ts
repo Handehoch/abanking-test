@@ -7,7 +7,6 @@ import { ICompany } from '../../models/company.interface';
   selector: 'app-companies',
   templateUrl: './companies.component.html',
   styleUrls: ['./companies.component.scss'],
-  providers: [CompaniesService],
 })
 export class CompaniesComponent implements OnInit {
   companies$: Observable<ICompany[]> | undefined;

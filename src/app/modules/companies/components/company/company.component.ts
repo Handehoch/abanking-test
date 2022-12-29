@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CompaniesService } from '../../services/companies.service';
+import { Observable } from 'rxjs';
+import { ICompany } from '../../models/company.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-company',
@@ -6,5 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company.component.scss'],
 })
 export class CompanyComponent implements OnInit {
-  ngOnInit(): void {}
+  id!: number;
+  company: Observable<ICompany> | undefined;
+  constructor(
+    private readonly companiesService: CompaniesService,
+    private readonly route: ActivatedRoute
+  ) {}
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.id = params['id'];
+    });
+
+    this.company = this.companiesService.getCompanyById(this.id);
+  }
 }

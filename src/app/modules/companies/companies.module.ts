@@ -4,11 +4,13 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import { CompanyCardComponent } from './components/company-card/company-card.component';
 import { CompanyComponent } from './components/company/company.component';
 import { AppRoutingModule } from '../routing/app-routing.module';
+import { CompaniesService } from './services/companies.service';
 
 @NgModule({
   declarations: [CompaniesComponent, CompanyCardComponent, CompanyComponent],
   imports: [CommonModule, AppRoutingModule],
   providers: [
+    CompaniesService,
     {
       provide: 'BASE_URL',
       useValue: 'https://random-data-api.com/api',
