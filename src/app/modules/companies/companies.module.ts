@@ -7,6 +7,12 @@ import { CompanyComponent } from './components/company/company.component';
 @NgModule({
   declarations: [CompaniesComponent, CompanyCardComponent, CompanyComponent],
   imports: [CommonModule],
+  providers: [
+    {
+      provide: 'BASE_URL',
+      useValue: 'https://random-data-api.com/api',
+    },
+  ],
   exports: [CompaniesComponent, CompanyCardComponent, CompanyComponent],
 })
 export class CompaniesModule {}
