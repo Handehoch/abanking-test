@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompaniesComponent } from '../companies/components/companies/companies.component';
 import { CompanyComponent } from '../companies/components/company/company.component';
+import { LoginComponent } from '../authentication/components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'companies',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'companies',
