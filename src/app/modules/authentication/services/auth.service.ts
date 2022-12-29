@@ -12,7 +12,7 @@ export class AuthService {
     localStorage.setItem('password', user.password);
   }
 
-  isValidStorage(): boolean {
+  isLoggedIn(): boolean {
     const username = localStorage.getItem('username');
     const password = localStorage.getItem('password');
 

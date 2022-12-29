@@ -39,12 +39,16 @@ export class LoginComponent implements OnInit {
       password: this.password,
     });
 
-    this.router.navigate(['/companies']).then((r) => console.log(r));
+    this.redirect('companies');
+  }
+
+  private redirect(urn: string) {
+    this.router.navigate([`/${urn}`]).then(() => console.log());
   }
 
   ngOnInit() {
-    if (this.authService.isValidStorage()) {
-      this.router.navigate(['/companies']).then((r) => console.log(r));
+    if (this.authService.isLoggedIn()) {
+      this.redirect('companies');
     }
 
     this.form = this.fb.group({

@@ -3,24 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompaniesComponent } from '../companies/components/companies/companies.component';
 import { CompanyComponent } from '../companies/components/company/company.component';
 import { LoginComponent } from '../authentication/components/login/login.component';
+import { AuthGuard } from '../../shared/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'companies',
-    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'companies',
+        component: CompaniesComponent,
+      },
+      {
+        path: 'companies/:id',
+        component: CompanyComponent,
+      },
+    ],
   },
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'companies',
-    component: CompaniesComponent,
-  },
-  {
-    path: 'companies/:id',
-    component: CompanyComponent,
   },
 ];
 
