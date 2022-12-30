@@ -14,7 +14,7 @@
   }
 
   &__card:hover {
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px var(--main-color);
     transition: box-shadow 0.3s linear;
   }
 }

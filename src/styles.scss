@@ -4,3 +4,35 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+:root {
+  --main-color: #000;
+  --second-color: #fff;
+}
+
+.btn {
+  padding: 10px 40px;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  cursor: pointer;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.btn:focus {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.btn:active {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
