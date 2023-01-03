@@ -5,9 +5,15 @@ import { CompanyCardComponent } from './components/company-card/company-card.com
 import { CompanyComponent } from './components/company/company.component';
 import { AppRoutingModule } from '../routing/app-routing.module';
 import { CompaniesService } from './services/companies.service';
+import { HeaderComponent } from '../../shared/components/header/header.component';
 
 @NgModule({
-  declarations: [CompaniesComponent, CompanyCardComponent, CompanyComponent],
+  declarations: [
+    CompaniesComponent,
+    CompanyCardComponent,
+    CompanyComponent,
+    HeaderComponent,
+  ],
   imports: [CommonModule, AppRoutingModule],
   providers: [
     CompaniesService,
