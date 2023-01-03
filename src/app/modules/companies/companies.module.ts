@@ -6,6 +6,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { AppRoutingModule } from '../routing/app-routing.module';
 import { CompaniesService } from './services/companies.service';
 import { HeaderComponent } from '../../shared/components/header/header.component';
+import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HeaderComponent } from '../../shared/components/header/header.component
     CompanyCardComponent,
     CompanyComponent,
     HeaderComponent,
+    CompaniesFilterPipe,
   ],
   imports: [CommonModule, AppRoutingModule],
   providers: [
