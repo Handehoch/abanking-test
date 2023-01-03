@@ -1,4 +1,28 @@
 .companies {
+  &__form {
+    display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+
+  &__query {
+    margin-right: 10px;
+    width: 20%;
+    border-radius: inherit;
+  }
+
+  &__search {
+    margin-right: 10px;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: inherit;
+  }
+
+  &__btn {
+    font-size: 18px;
+    border-radius: 5px;
+  }
 
   &__list {
     display: grid;

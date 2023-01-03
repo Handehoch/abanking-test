@@ -1,8 +1,17 @@
 <app-header></app-header>
 <div class="container">
   <div class="companies">
+    <form class="companies__form" [formGroup]="form" (ngSubmit)="onSearch()">
+      <select class="companies__query" name="query" id="query" formControlName="query">
+        <option value="" selected>No choice</option>
+        <option value="business_name" selected>Name</option>
+        <option value="industry">Activity Type</option>
+        <option value="type">Type</option>
+      </select>
+      <input class="companies__search" type="text" name="search" id="search" formControlName="search" placeholder="Search...">
+    </form>
     <ul class="companies__list" *ngIf="companies$ !== undefined">
-      <li class="companies__card" *ngFor="let company of companies$ | async">
+      <li class="companies__card" *ngFor="let company of companies$ | async | companiesFilter:query:search">
           <app-company-card [company]="company" [routerLink]="['/companies', company.id]">
           </app-company-card>
       </li>

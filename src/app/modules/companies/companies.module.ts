@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../routing/app-routing.module';
 import { CompaniesService } from './services/companies.service';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
     HeaderComponent,
     CompaniesFilterPipe,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, ReactiveFormsModule],
   providers: [
     CompaniesService,
     {
