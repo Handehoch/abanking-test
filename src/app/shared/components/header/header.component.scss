@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 20px;
+  z-index: 10000;
 
   &__checkbox {
     position: absolute;
