@@ -1,0 +1,50 @@
+.company {
+  padding-top: 20px;
+  align-items: center;
+
+  &__info {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__about {
+    max-width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  &__description {
+    line-height: 150%;
+  }
+
+  &__description:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  &__link {
+    text-decoration: underline;
+    color: gray;
+  }
+
+  &__logo {
+    max-width: 50%;
+    max-height: 300px;
+  }
+
+  &__map {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+  }
+}
+//
+//ya-map {
+//  margin: 0 auto;
+//}

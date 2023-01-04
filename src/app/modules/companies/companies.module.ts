@@ -8,6 +8,7 @@ import { CompaniesService } from './services/companies.service';
 import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     AppRoutingModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
+    AngularYandexMapsModule.forRoot({
+      apikey: '263e6893-db9f-4678-a749-e9bf0feb97bb',
+      lang: 'en_US',
+    }),
   ],
   providers: [
     CompaniesService,

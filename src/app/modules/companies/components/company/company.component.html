@@ -1,2 +1,20 @@
-<h1 *ngIf="company !== undefined">{{company.business_name}}</h1>
-<p>company works!</p>
+<div class="container">
+  <div class="company" *ngIf="company !== undefined">
+    <div class="company__info">
+      <div class="company__about">
+        <h1 class="company__title">{{company.business_name}}</h1>
+        <p class="company__description">{{company.industry}}</p>
+        <p class="company__description">{{company.catch_phrase}}</p>
+        <a href="tel:{{company.phone_number.split('-')}}"
+           class="company__description company__link">
+          {{company.phone_number}}
+        </a>
+        <p class="company__description">{{company.full_address}}</p>
+      </div>
+      <img class="company__logo" [src]="company.logo" alt="Company logo">
+    </div>
+    <div class="company__map">
+      <ya-map [center]="[company.latitude, company.longitude]" [zoom]="8"></ya-map>
+    </div>
+  </div>
+</div>
