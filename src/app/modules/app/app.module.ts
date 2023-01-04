@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompaniesModule } from '../companies/companies.module';
 import { AuthenticationModule } from '../authentication/authentication.module';
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -17,5 +19,6 @@ import { AuthenticationModule } from '../authentication/authentication.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [HeaderComponent, SidebarComponent],
 })
 export class AppModule {}
