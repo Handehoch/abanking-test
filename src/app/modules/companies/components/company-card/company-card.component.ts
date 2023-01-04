@@ -11,7 +11,5 @@ export class CompanyCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.company.id);
-  }
+  ngOnInit(): void {}
 }
