@@ -1,6 +1,6 @@
 <div class="container">
   <div class="companies">
-    <form class="companies__form" [formGroup]="form" (ngSubmit)="onSearch()">
+    <form class="companies__form" [formGroup]="form">
       <select class="companies__query" name="query" id="query" formControlName="query">
         <option value="" selected>No choice</option>
         <option value="business_name" selected>Name</option>
@@ -9,8 +9,8 @@
       </select>
       <input class="companies__search" type="text" name="search" id="search" formControlName="search" placeholder="Search...">
     </form>
-    <ul class="companies__list" *ngIf="companies$ !== undefined">
-      <li class="companies__card" *ngFor="let company of companies$ | async | companiesFilter:query:search">
+    <ul class="companies__list" infinite-scroll (scrolled)="onScrollDown()">
+      <li class="companies__card" *ngFor="let company of companies | companiesFilter:query:search">
           <app-company-card [company]="company" [routerLink]="['/companies', company.id]">
           </app-company-card>
       </li>

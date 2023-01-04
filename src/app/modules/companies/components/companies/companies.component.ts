@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CompaniesService } from '../../services/companies.service';
-import { Observable } from 'rxjs';
 import { ICompany } from '../../models/company.interface';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
@@ -11,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class CompaniesComponent implements OnInit {
   form!: FormGroup;
-  companies$: Observable<ICompany[]> | undefined;
+  companies: ICompany[] = [];
   public pageSize: number = 8;
   constructor(
     private readonly companiesService: CompaniesService,
@@ -27,14 +26,20 @@ export class CompaniesComponent implements OnInit {
   }
 
   getCompanies(): void {
-    this.companies$ = this.companiesService.getCompanies(this.pageSize);
+    this.companiesService.getCompanies(this.pageSize).subscribe(() => {
+      // Из-за отсутсвия БД пришлось хранить компании в сервисе
+      // и перезаписывать в компоненту текущие компании
+      this.companies = [...this.companiesService.companies];
+    });
   }
 
-  onSearch(): void {}
+  onScrollDown(): void {
+    this.getCompanies();
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      query: new FormControl('Option'),
+      query: new FormControl(null),
       search: new FormControl(null),
     });
     this.getCompanies();

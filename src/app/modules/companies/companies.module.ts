@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../routing/app-routing.module';
 import { CompaniesService } from './services/companies.service';
 import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CompanyComponent,
     CompaniesFilterPipe,
   ],
-  imports: [CommonModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    InfiniteScrollModule,
+  ],
   providers: [
     CompaniesService,
     {

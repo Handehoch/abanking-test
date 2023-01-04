@@ -15,14 +15,11 @@ export class CompaniesFilterPipe implements PipeTransform {
       return value as ICompany[];
     }
 
-    const res = (value as ICompany[]).filter((c) =>
+    return (value as ICompany[]).filter((c) =>
       (c[query as keyof ICompany] as string)
         .toLowerCase()
         .match(search.toLowerCase())
     );
-
-    console.log(res);
-    return res;
   }
 
   private isValid(query: string) {
