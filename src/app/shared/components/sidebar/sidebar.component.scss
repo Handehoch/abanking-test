@@ -14,8 +14,42 @@
     flex-direction: column;
   }
 
-  &__text {
+  &__item {
+    width: 22px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: text-shadow 0.3s linear;
+  }
+
+  &__item--bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+  }
+
+  &__item--bg-home {
+    background-image: url("../../../../assets/home.png");
+  }
+
+  &__item--bg-create {
+    background-image: url("../../../../assets/writing.png");
+  }
+
+  &__item:hover {
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    transition: text-shadow 0.3s linear;
+  }
+
+  &__item:focus {
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    transition: text-shadow 0.3s linear;
+  }
+
+  &__link {
     color: var(--second-color);
-    font-size: 24px;
+    font-size: 25px;
+    padding-left: 30px;
   }
 }
