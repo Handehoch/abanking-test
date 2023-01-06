@@ -11,7 +11,7 @@ export class AppComponent {
   isLoggedIn: boolean = false;
   sidebarShown: boolean = false;
 
-  constructor(private readonly router: Router) {
+  constructor(public readonly router: Router) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.isLoggedIn = e.url !== '/login';
