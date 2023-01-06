@@ -9,6 +9,7 @@ import { CompaniesFilterPipe } from '../../shared/pipes/companies-filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
+import { CreateCompanyComponent } from './components/create-company/create-company.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AngularYandexMapsModule } from 'angular8-yandex-maps';
     CompanyCardComponent,
     CompanyComponent,
     CompaniesFilterPipe,
+    CreateCompanyComponent,
   ],
   imports: [
     CommonModule,

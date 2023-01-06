@@ -1,0 +1,47 @@
+.company-form {
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -225px;
+  margin-left: -175px;
+
+  &__list {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__item:not(:nth-child(3)) {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  &__item:nth-child(3) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:nth-child(3) > &__label {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    height: 33px;
+    border-radius: 7px;
+  }
+
+  &__btn {
+    border-radius: 7px;
+  }
+}

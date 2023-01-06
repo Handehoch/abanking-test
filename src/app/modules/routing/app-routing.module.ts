@@ -4,6 +4,7 @@ import { CompaniesComponent } from '../companies/components/companies/companies.
 import { CompanyComponent } from '../companies/components/company/company.component';
 import { LoginComponent } from '../authentication/components/login/login.component';
 import { AuthGuard } from '../../shared/guards/auth.guard';
+import { CreateCompanyComponent } from '../companies/components/create-company/create-company.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'companies/:id',
     component: CompanyComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'create',
+    component: CreateCompanyComponent,
     canActivate: [AuthGuard],
   },
 ];

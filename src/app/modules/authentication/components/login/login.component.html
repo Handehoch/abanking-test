@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="login-form login-form--bg">
+  <div class="login-form radial--bg">
     <img src="../../../../../assets/person_login.png" alt="Login logo" class="login-form__logo">
-    <form class="login-form__form" [formGroup]="form" (ngSubmit)="onLoginClick()">
+    <form class="form login-form__form" [formGroup]="form" (ngSubmit)="onLoginClick()">
       <label class="login-form__label" for="username">Username:</label>
       <input class="login-form__input" type="text" name="username" id="username"
              formControlName="username"
