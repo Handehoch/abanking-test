@@ -23,22 +23,22 @@ export class CreateCompanyComponent implements OnInit {
   ) {}
 
   get name() {
-    return this.form.get('name')?.value;
+    return this.form.get('name');
   }
 
   get activity() {
-    return this.form.get('activity')?.value;
+    return this.form.get('activity');
   }
 
   get russian() {
-    return this.form.get('russian')?.value;
+    return this.form.get('russian');
   }
 
   onFormSubmit(): void {
     const company: ICreateCompanyDto = {
-      business_name: this.name,
-      industry: this.activity,
-      isRussian: this.russian,
+      business_name: this.name?.value,
+      industry: this.activity?.value,
+      isRussian: this.russian?.value,
     };
 
     console.log(company);

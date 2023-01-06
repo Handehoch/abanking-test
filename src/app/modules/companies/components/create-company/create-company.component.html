@@ -7,13 +7,25 @@
           <input class="company-form__input" type="text"
                  name="name" id="name"
                  formControlName="name"
+                 required
+                 [maxLength]="15"
           >
+          <div class="company-form__errors"
+               *ngIf="name?.invalid && (name?.touched || name?.dirty)"
+          >
+            <span class="company-form__error"
+                  *ngIf="name?.errors?.['required']"
+            >
+              Field is required
+            </span>
+          </div>
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="activity">Typy of Activity:</label>
           <select class="company-form__input"
                   name="activity" id="activity"
                   formControlName="activity"
+                  required
           >
             <option value="forest">Лесоводство и лесозаготовки</option>
             <option value="coal">Добыча угля</option>
@@ -21,6 +33,15 @@
             <option value="science">Научные исследования и разработки</option>
             <option value="public">Деятельность общественных организаций</option>
           </select>
+          <div class="company-form__errors"
+               *ngIf="activity?.invalid && (activity?.touched || activity?.dirty)"
+          >
+            <span class="company-form__error"
+                  *ngIf="activity?.errors?.['required']"
+            >
+              Field is required
+            </span>
+          </div>
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="russian">Is on russian market:</label>
@@ -30,7 +51,10 @@
           >
         </li>
         <li class="company-form__item">
-          <button class="btn company-form__btn" type="submit">Create</button>
+          <button class="btn company-form__btn"
+                  type="submit"
+                  [disabled]="(name?.invalid && activity?.invalid)"
+          >Create</button>
         </li>
       </ul>
     </form>

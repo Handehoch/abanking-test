@@ -13,7 +13,8 @@
   }
 
   &__item {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
   }
 
   &__item:not(:nth-child(3)) {
@@ -39,9 +40,19 @@
   &__input {
     height: 33px;
     border-radius: 7px;
+    position: relative;
   }
 
   &__btn {
     border-radius: 7px;
+  }
+
+  &__error {
+    position: absolute;
+    top: 64px;
+    font-size: 14px;
+    color: crimson;
+    margin: 0 auto;
+    padding-left: 10px;
   }
 }
