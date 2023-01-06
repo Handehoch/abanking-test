@@ -1,14 +1,20 @@
 <div class="container">
   <div class="company-form radial--bg">
-    <form class="form company-form__form">
+    <form class="form company-form__form" [formGroup]="form" (ngSubmit)="onFormSubmit()">
       <ul class="company-form__list">
         <li class="company-form__item">
           <label class="company-form__label" for="name">Company Name:</label>
-          <input class="company-form__input" type="text" name="name" id="name" formControlName="name">
+          <input class="company-form__input" type="text"
+                 name="name" id="name"
+                 formControlName="name"
+          >
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="activity">Typy of Activity:</label>
-          <select class="company-form__input" name="activity" id="activity">
+          <select class="company-form__input"
+                  name="activity" id="activity"
+                  formControlName="activity"
+          >
             <option value="forest">Лесоводство и лесозаготовки</option>
             <option value="coal">Добыча угля</option>
             <option value="furniture">Производство мебели</option>
@@ -18,7 +24,10 @@
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="russian">Is on russian market:</label>
-          <input class="company-form__input" type="checkbox" name="name" id="russian" formControlName="russian">
+          <input class="company-form__input" type="checkbox"
+                 name="name" id="russian"
+                 formControlName="russian"
+          >
         </li>
         <li class="company-form__item">
           <button class="btn company-form__btn" type="submit">Create</button>

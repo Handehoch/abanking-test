@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { CreateCompanyComponent } from './components/create-company/create-company.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,10 @@ import { CreateCompanyComponent } from './components/create-company/create-compa
     InfiniteScrollModule,
     AngularYandexMapsModule.forRoot({
       apikey: 'a6fa52ee-0f34-44df-b03c-155a735afaf3',
+    }),
+    ToastrModule.forRoot({
+      progressBar: true,
+      closeButton: true,
     }),
   ],
   providers: [
