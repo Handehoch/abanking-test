@@ -53,7 +53,7 @@
         <li class="company-form__item">
           <button class="btn company-form__btn"
                   type="submit"
-                  [disabled]="(name?.invalid && activity?.invalid)"
+                  [disabled]="(name?.invalid || activity?.invalid)"
           >Create</button>
         </li>
       </ul>
