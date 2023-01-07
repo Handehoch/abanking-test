@@ -27,6 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     InfiniteScrollModule,
     AngularYandexMapsModule.forRoot({
       apikey: 'a6fa52ee-0f34-44df-b03c-155a735afaf3',
+      lang: 'en_US',
     }),
     ToastrModule.forRoot({
       progressBar: true,

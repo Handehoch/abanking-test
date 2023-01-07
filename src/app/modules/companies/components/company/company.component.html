@@ -14,7 +14,9 @@
       <img class="company__logo" [src]="company.logo" alt="Company logo">
     </div>
     <div class="company__map">
-      <ya-map [center]="[company.latitude, company.longitude]" [zoom]="8"></ya-map>
+      <ya-map [center]="[company.latitude, company.longitude]" [zoom]="8">
+        <ya-placemark [geometry]="[company.latitude, company.longitude]"></ya-placemark>
+      </ya-map>
     </div>
   </div>
 </div>
