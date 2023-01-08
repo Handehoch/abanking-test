@@ -1,8 +1,22 @@
 @use "reset";
 @import 'ngx-toastr/toastr';
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+}
+
+[main] {
+  min-height: 100%;
+}
+
+[footer] {
+  height: 60px;
+  margin-top: -60px;
 }
 
 :root {

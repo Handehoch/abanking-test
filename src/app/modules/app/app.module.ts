@@ -7,9 +7,15 @@ import { CompaniesModule } from '../companies/companies.module';
 import { AuthenticationModule } from '../authentication/authentication.module';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidebarComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +25,6 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, SidebarComponent],
+  exports: [HeaderComponent, SidebarComponent, FooterComponent],
 })
 export class AppModule {}
