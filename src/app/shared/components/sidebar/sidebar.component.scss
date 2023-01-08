@@ -15,9 +15,9 @@
   }
 
   &__item {
-    width: 22px;
+    width: 40px;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 25px;
     cursor: pointer;
     text-shadow: none;
     transition: text-shadow 0.3s linear;
@@ -26,15 +26,15 @@
   &__item--bg {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 22px;
+    background-size: 30px;
   }
 
   &__item--bg-home {
-    background-image: url("../../../../assets/home.png");
+    background-image: url("../../../../assets/home.svg");
   }
 
   &__item--bg-create {
-    background-image: url("../../../../assets/writing.png");
+    background-image: url("../../../../assets/create.svg");
   }
 
   &__item:hover {
