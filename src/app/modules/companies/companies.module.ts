@@ -40,6 +40,10 @@ import { ToastrModule } from 'ngx-toastr';
       provide: 'BASE_URL',
       useValue: 'https://random-data-api.com/api',
     },
+    {
+      provide: 'LIFE_TIME',
+      useValue: 24 * 60 * 60,
+    },
   ],
   exports: [CompaniesComponent, CompanyCardComponent, CompanyComponent],
 })

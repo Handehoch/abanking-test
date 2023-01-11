@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ICompany } from '../models/company.interface';
 
 @Injectable({
@@ -10,24 +10,24 @@ export class CompaniesService {
   companies: ICompany[] = [];
   constructor(
     @Inject('BASE_URL') private readonly baseUrl: string,
+    @Inject('LIFE_TIME') private readonly LIFE_TIME: number,
     private readonly http: HttpClient
   ) {}
 
   getCompanies(size: number): Observable<ICompany[]> {
-    const companies$ = this.http.get<ICompany[]>(
-      `${this.baseUrl}/company/random_company`,
-      {
+    return this.http
+      .get<ICompany[]>(`${this.baseUrl}/company/random_company`, {
         params: {
           size: size ?? undefined,
         },
-      }
-    );
-
-    companies$.subscribe((data) => {
-      this.companies = [...this.companies, ...data];
-    });
-
-    return companies$;
+      })
+      .pipe(
+        map((companies) => {
+          this.companies = [...this.companies, ...companies];
+          console.log(this.companies);
+          return [...this.companies, ...companies];
+        })
+      );
   }
 
   getCompanyById(companyId: number): ICompany {
