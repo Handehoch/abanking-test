@@ -2,11 +2,11 @@
      *ngIf="input?.invalid && (input?.touched || input?.dirty)"
 >
   <span class="error"
-        *ngIf="input?.errors?.['required']"
+        *ngIf="input?.touched && input?.errors?.['required']"
   >
     Field is required
   </span>
-  <span class="error" *ngIf="input?.errors?.['pattern']">
+  <span class="error" *ngIf="input?.touched && input?.errors?.['pattern']">
     Please, type email only
   </span>
 </div>
