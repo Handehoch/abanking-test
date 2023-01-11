@@ -54,7 +54,6 @@
   }
 
   &__btn {
-    margin-left: auto;
     margin-right: 20px;
     background-color: var(--second-color);
     color: var(--main-color);
@@ -80,6 +79,7 @@
   }
 
   &__logo {
+    margin-left: auto;
     max-height: 50px;
     margin-right: 20px;
   }
