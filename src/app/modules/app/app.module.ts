@@ -5,26 +5,19 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompaniesModule } from '../companies/companies.module';
 import { AuthenticationModule } from '../authentication/authentication.module';
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SidebarComponent,
-    FooterComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AuthenticationModule,
     CompaniesModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, SidebarComponent, FooterComponent],
 })
 export class AppModule {}

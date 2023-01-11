@@ -10,15 +10,7 @@
                  required
                  [maxLength]="15"
           >
-          <div class="company-form__errors"
-               *ngIf="name?.invalid && (name?.touched || name?.dirty)"
-          >
-            <span class="company-form__error"
-                  *ngIf="name?.errors?.['required']"
-            >
-              Field is required
-            </span>
-          </div>
+          <app-input-error [input]="name"></app-input-error>
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="activity">Typy of Activity:</label>
@@ -33,15 +25,7 @@
             <option value="science">Научные исследования и разработки</option>
             <option value="public">Деятельность общественных организаций</option>
           </select>
-          <div class="company-form__errors"
-               *ngIf="activity?.invalid && (activity?.touched || activity?.dirty)"
-          >
-            <span class="company-form__error"
-                  *ngIf="activity?.errors?.['required']"
-            >
-              Field is required
-            </span>
-          </div>
+          <app-input-error [input]="activity"></app-input-error>
         </li>
         <li class="company-form__item">
           <label class="company-form__label" for="russian">Is on russian market:</label>

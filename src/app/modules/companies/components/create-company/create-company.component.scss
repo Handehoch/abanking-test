@@ -42,17 +42,4 @@
     border-radius: 7px;
     position: relative;
   }
-
-  &__btn {
-    border-radius: 7px;
-  }
-
-  &__error {
-    position: absolute;
-    top: 64px;
-    font-size: 14px;
-    color: crimson;
-    margin: 0 auto;
-    padding-left: 10px;
-  }
 }

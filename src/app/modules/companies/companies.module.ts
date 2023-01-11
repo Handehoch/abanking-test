@@ -11,6 +11,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { CreateCompanyComponent } from './components/create-company/create-company.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
       closeButton: true,
     }),
+    SharedModule,
   ],
   providers: [
     CompaniesService,

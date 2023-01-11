@@ -14,19 +14,21 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  form!: FormGroup;
+  public form!: FormGroup;
+  private emailRegex: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
+
   constructor(
     private readonly authService: AuthService,
     private readonly fb: FormBuilder,
     private readonly router: Router
   ) {}
 
-  get username(): string {
-    return this.form.get('username')?.value;
+  get email() {
+    return this.form.get('email');
   }
 
-  get password(): string {
-    return this.form.get('password')?.value;
+  get password() {
+    return this.form.get('password');
   }
 
   onLoginClick() {
@@ -35,8 +37,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.saveToLocalStorage({
-      username: this.username,
-      password: this.password,
+      email: this.email?.value,
+      password: this.password?.value,
     });
 
     this.redirect('companies');
@@ -52,7 +54,10 @@ export class LoginComponent implements OnInit {
     }
 
     this.form = this.fb.group({
-      username: new FormControl(null, Validators.required),
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(this.emailRegex),
+      ]),
       password: new FormControl(null, Validators.required),
     });
   }

@@ -8,14 +8,14 @@ export class AuthService {
   constructor() {}
 
   saveToLocalStorage(user: IUser): void {
-    localStorage.setItem('username', user.username);
+    localStorage.setItem('email', user.email);
     localStorage.setItem('password', user.password);
   }
 
   isLoggedIn(): boolean {
-    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
     const password = localStorage.getItem('password');
 
-    return username !== null && password !== null;
+    return email !== null && password !== null;
   }
 }

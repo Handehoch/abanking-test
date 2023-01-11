@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() burgerClick: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private readonly router: Router) {}
+
+  onLogoutClick(): void {
+    localStorage.clear();
+    this.router.navigate(['/login']).catch(console.log);
+  }
 
   onBurgerClick(): void {
     this.burgerClick.emit();

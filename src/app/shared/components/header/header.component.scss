@@ -53,9 +53,34 @@
     transition: transform 0.4s ease-in-out;
   }
 
+  &__btn {
+    margin-left: auto;
+    margin-right: 20px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    font-size: 18px;
+    box-shadow: none;
+    transition: box-shadow 0.3s linear;
+  }
+
+  &__btn:hover,
+  &__btn:focus {
+    box-shadow: inset 0 0 30px var(--main-color);
+    transition: box-shadow 0.3s linear;
+  }
+
+  &__btn:focus {
+    box-shadow: inset 0 0 30px var(--main-color);
+    transition: box-shadow 0.3s linear;
+  }
+
+  &__btn:active {
+    box-shadow: inset 0 0 30px var(--main-color);
+    transition: box-shadow 0.3s linear;
+  }
+
   &__logo {
     max-height: 50px;
-    margin-left: auto;
     margin-right: 20px;
   }
 }
