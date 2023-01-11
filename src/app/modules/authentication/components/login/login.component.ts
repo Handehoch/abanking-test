@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private readonly authService: AuthService,
     private readonly fb: FormBuilder,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly toastr: ToastrService
   ) {}
 
   get email() {
@@ -32,15 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick() {
-    if (!this.form.valid) {
-      return;
-    }
-
     this.authService.saveToLocalStorage({
       email: this.email?.value,
       password: this.password?.value,
     });
 
+    this.toastr.success('Successfully logged in!', 'Success!');
     this.redirect('companies');
   }
 
