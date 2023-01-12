@@ -27,8 +27,6 @@ export class CompaniesComponent implements OnInit {
 
   getCompanies(): void {
     this.companiesService.getCompanies(this.pageSize).subscribe(() => {
-      // Из-за отсутсвия БД пришлось хранить компании в сервисе
-      // и перезаписывать в компоненту текущие компании
       this.companies = [...this.companiesService.companies];
     });
   }

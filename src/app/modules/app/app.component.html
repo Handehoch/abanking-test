@@ -5,7 +5,6 @@
   <app-sidebar *ngIf="isLoggedIn && sidebarShown"></app-sidebar>
   <router-outlet></router-outlet>
 </main>
-<!--TODO отключить футер на странице списка компаний?-->
 <app-footer
-  *ngIf="isLoggedIn && router.url !== '/login'">
+  *ngIf="isLoggedIn && router.url !== '/login' && router.url !== '/companies'">
 </app-footer>
