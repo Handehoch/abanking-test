@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompaniesService } from '../../services/companies.service';
 import { ICompany } from '../../models/company.interface';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { CachingService } from '../../services/caching.service';
 
 @Component({
   selector: 'app-companies',
@@ -11,9 +12,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class CompaniesComponent implements OnInit {
   form!: FormGroup;
   companies: ICompany[] = [];
+
   public pageSize: number = 8;
   constructor(
     private readonly companiesService: CompaniesService,
+    private readonly cachingService: CachingService,
     private readonly fb: FormBuilder
   ) {}
 
@@ -27,7 +30,8 @@ export class CompaniesComponent implements OnInit {
 
   getCompanies(): void {
     this.companiesService.getCompanies(this.pageSize).subscribe(() => {
-      this.companies = [...this.companiesService.companies];
+      this.companies = this.companiesService.companies;
+      console.log(this.companies);
     });
   }
 
@@ -40,6 +44,7 @@ export class CompaniesComponent implements OnInit {
       query: new FormControl(null),
       search: new FormControl(null),
     });
+
     this.getCompanies();
   }
 }
