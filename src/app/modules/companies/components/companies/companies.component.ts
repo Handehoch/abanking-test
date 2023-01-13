@@ -31,7 +31,6 @@ export class CompaniesComponent implements OnInit {
   getCompanies(): void {
     this.companiesService.getCompanies(this.pageSize).subscribe(() => {
       this.companies = this.companiesService.companies;
-      console.log(this.companies);
     });
   }
 
