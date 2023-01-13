@@ -28,6 +28,10 @@ export class CompaniesComponent implements OnInit {
     return this.form.get('search')?.value;
   }
 
+  get sort(): boolean {
+    return this.form.get('sort')?.value;
+  }
+
   getCompanies(): void {
     this.companiesService.getCompanies(this.pageSize).subscribe(() => {
       this.companies = this.companiesService.companies;
@@ -42,6 +46,7 @@ export class CompaniesComponent implements OnInit {
     this.form = this.fb.group({
       query: new FormControl(null),
       search: new FormControl(null),
+      sort: new FormControl(null),
     });
 
     this.getCompanies();

@@ -2,15 +2,18 @@
   <div class="companies">
     <form class="companies__form" [formGroup]="form">
       <select class="companies__query" name="query" id="query" formControlName="query">
-        <option value="" selected>No choice</option>
-        <option value="business_name" selected>Name</option>
+        <option value="" selected>All</option>
         <option value="industry">Activity Type</option>
         <option value="type">Type</option>
       </select>
       <input class="companies__search" type="text" name="search" id="search" formControlName="search" placeholder="Search...">
+      <label class="companies__sort" for="sort">Сортировка по имени</label>
+      <input class="companies__checkbox" type="checkbox" name="sort" id="sort" formControlName="sort">
     </form>
     <ul class="companies__list" infinite-scroll (scrolled)="onScrollDown()">
-      <li class="companies__card" *ngFor="let company of companies | companiesFilter:query:search">
+      <li class="companies__card"
+          *ngFor="let company of companies |companiesSort:sort | companiesFilter:query:search"
+      >
           <app-company-card [company]="company" [routerLink]="['/companies', company.id]">
           </app-company-card>
       </li>
