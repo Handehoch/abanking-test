@@ -4,9 +4,10 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
+import { HoverDirective } from './directives/hover.directive';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, HoverDirective, HoverDirective],
   imports: [
     CommonModule,
     ReactiveFormsModule,

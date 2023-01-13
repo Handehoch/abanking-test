@@ -12,8 +12,9 @@
         </li>
         <li class="login-form__item">
           <label class="login-form__label" for="password">Password:</label>
-          <input class="login-form__input" type="password" name="password" id="password"
+          <input class="login-form__input login-form__password" type="password" name="password" id="password"
                  formControlName="password"
+                 show-password
           >
           <app-input-error [input]="password"></app-input-error>
         </li>
