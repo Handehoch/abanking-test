@@ -13,7 +13,7 @@
     </form>
     <ul class="companies__list" infinite-scroll (scrolled)="onScrollDown()">
       <li class="companies__card"
-          *ngFor="let company of companies |companiesSort:sort | companiesFilter:query:search"
+          *ngFor="let company of companies | companiesSort:sort | companiesFilter:query:search"
       >
           <app-company-card [company]="company" [routerLink]="['/companies', company.id]">
           </app-company-card>
