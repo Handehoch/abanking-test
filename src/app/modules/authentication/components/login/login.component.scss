@@ -46,6 +46,16 @@
     height: 33px;
   }
 
+  &__password {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__password-label {
+    margin-right: 10px;
+  }
+
   &__btn {
     width: 100%;
   }

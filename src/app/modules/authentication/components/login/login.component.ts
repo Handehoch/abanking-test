@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -17,6 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   public form!: FormGroup;
   private emailRegex: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
+  @ViewChild('passwordInput') passwordInput!: ElementRef;
 
   constructor(
     private readonly authService: AuthService,
@@ -45,6 +46,13 @@ export class LoginComponent implements OnInit {
 
   private redirect(urn: string) {
     this.router.navigate([`/${urn}`]).then(() => console.log());
+  }
+
+  onShowPasswordClick(event: Event): void {
+    this.passwordInput.nativeElement.setAttribute(
+      'type',
+      (<HTMLInputElement>event.target).checked ? 'text' : 'password'
+    );
   }
 
   ngOnInit() {

@@ -12,11 +12,15 @@
         </li>
         <li class="login-form__item">
           <label class="login-form__label" for="password">Password:</label>
-          <input class="login-form__input login-form__password" type="password" name="password" id="password"
+          <input class="login-form__input" type="password" name="password" id="password"
                  formControlName="password"
-                 show-password
+                 #passwordInput
           >
           <app-input-error [input]="password"></app-input-error>
+          <div class="login-form__password">
+            <label class="login-form__password-label" for="showPassword">Show password</label>
+            <input type="checkbox" name="showPassword" id="showPassword" (change)="onShowPasswordClick($event)">
+          </div>
         </li>
         <li class="login-form__item">
           <button class="btn login-form__btn" type="submit" [disabled]="form.invalid">Login</button>
